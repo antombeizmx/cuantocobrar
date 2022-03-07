@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuanto Cobrar por</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="sources/css/estilos.css">
+</head>
+<body>
+        <nav style="width: 100%;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#cuanto_cobrar">Cuanto cobrar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://wa.me/525578525187?text=Hola%20me%20puesdes%20dar%20informacion%20de%20esta%20pagina">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="container d-flex justify-content-center align-items-center" id="inicio">
+            <div class="row mt-5" id="seccion_bienvenida">
+                <div class="col  d-flex flex-column justify-content-center align-items-center">
+                    <img src="sources/img/fondo_1.svg" alt="" class="img-fluid img">
+                </div>
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <div class="row">
+                        <div class="col-12 p-2">
+                            <h1 class="text-center fs-1">Averígua cuanto cobrar por tus servicios.</h1>
+                        </div>
+                    </div>
+                    <p class="text-center fs-4">Gratis, sin anucios, sin dramas.</p>
+                    <div class="row  d-flex flex-column justify-content-center align-items-center">
+                        <a href="#cuanto_cobrar" class="nav-link active"><button type="button" class=" boton btn btn-primary fs-5">Quiero saber el costo de mi servicio</button></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-center align-items-center" id="cuanto_cobrar">
+            <div class="row mt-5" id="seccion_bienvenida">
+                <div class="row d-flex flex-column justify-content-center align-items-center">
+                    <div class="row seccion_input">
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Precio por hora ($)</label>
+                            <input type="text" id="input_precio" class="form-control" placeholder="ingresar solo numeros">
+                        </div>
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Duracion de proyecto (Horas)</label>
+                            <input type="text" id="input_duracion" class="form-control" placeholder="ingresar solo numeros">
+                        </div> 
+                    </div>
+                    <div class="row seccion_input">
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Impuestos (%)</label>
+                            <input type="text" id="input_impuestos" class="form-control" placeholder="ingresar solo numeros">
+                        </div>
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Dias del mes</label>
+                            <input type="text" id="input_mes" class="form-control" placeholder="ingresar solo numeros">
+                        </div> 
+                    </div>
+                    <div class="row seccion_input">
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Jornada Laboral ($)</label>
+                            <input type="text" id="input_jornada" class="form-control" placeholder="ingresar solo numeros">
+                        </div>
+                        <div class="form-group m-1 row">
+                            <label for="input_precio">Costos Operativos por mes. <br> (Se entiende como costos operativos  a todos los servicios como internet, agua luz, etc)</label>
+                            <input type="text" id="input_operativos" class="form-control" placeholder="Cantidades separadas por ',' ej. 500,4000,900">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <a href="#resultado" class="nav-link active d-flex justify-content-center align-items-center" onclick="costo_servicio();"><button type="button" class=" boton btn btn-primary fs-5">Calcular</button></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-center align-items-center" id="resultado">
+            <div class="row mt-5" id="seccion_bienvenida">
+                <div class="col  d-flex flex-column justify-content-center align-items-center">
+                    <img src="sources/img/fondo_3.svg" alt="" class="img-fluid img">
+                </div>
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <div class="row">
+                        <div class="col-12 p-2">
+                            <h1 class="text-center fs-4">El costo final es de:</h1>
+                        </div>
+                    </div>
+                    <p class="text-center" id="parrafo_resultado">$00.00</p>
+                    <div class="row">
+                            <button type="button" class=" boton btn btn-primary fs-5 "  onclick="copiar_portapapeles();">Copiar</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <footer class="w-100  d-flex  align-items-center justify-content-center">
+            <p class="fs-5 px-3  pt-3">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.
+            </p>
+        </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="funciones.js"></script>
+</html>

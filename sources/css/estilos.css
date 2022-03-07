@@ -1,0 +1,46 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#inicio
+{
+    height:calc(100vh - 48px);
+}
+#contacto
+{
+    height:100vh;
+}
+#cuanto_cobrar,#resultado
+{
+    height:100vh;
+}
+#parrafo_resultado
+{
+    font-size: 20px;
+}
+
+.input
+{
+    max-width: inherit;
+}
+
+@media screen and (max-width: 770px) {
+    #seccion_bienvenida
+    {
+        flex-direction: column;
+    }
+    .img
+    {
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .img_2
+    {
+        display: none;
+    }
+
+}
