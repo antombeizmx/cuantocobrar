@@ -16,6 +16,7 @@ let impuestos = input_impuestos.value;
 let mes = input_mes.value;
 let jornada = input_jornada.value;
 let operativos = input_operativos.value;
+console.log("listos")
     // comprobar que las variables no esten vacias  
     if (precios == "" || duracion == "" || impuestos == "" || mes == "" || jornada == "" || operativos == "")
     {
@@ -60,8 +61,15 @@ let operativos = input_operativos.value;
         console.log(costo_final);
 
         // // mostrar el resultado en el div
+
+        // let precio_decimal = costo_final.toString().split(".");
+        // let precio_entero = precio_decimal[0];
+        // let precio_decimal_final = precio_decimal[1].substring(0,2);
+        // let precio_final = precio_entero + "." + precio_decimal_final;
+
         document.getElementById("parrafo_resultado").innerHTML = " ";
-        document.getElementById("parrafo_resultado").innerHTML = formato(Math.ceil(costo_final));
+        document.getElementById("parrafo_resultado").innerHTML = "Costo redondeado: <br>"+formato(Math.ceil(costo_final))+"<br> Costo real: <br>"+formato(costo_final);
+        window.location.href = window.location.href.split("#")[0]+"#resultado";
     }
 }
 
